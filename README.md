@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ###超级简单的小计算
 
 请在文件`src/calculate-median.js`中实现`calculate_median`函数
@@ -9,4 +8,3 @@
 =======
 # easy-calculate
 easy-calculate
->>>>>>> 1de86920ff412021ee4fe7ad4e35a9abde7049b8
