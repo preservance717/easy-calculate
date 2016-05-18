@@ -1,7 +1,9 @@
 function calculate_median(arr) {
-  sortArray(arr);
+   sortArray(arr);
+   var evens = buildEvens(arr);
+   var median = findMedian(arr, evens);
 
-  return findMedian(arr);
+  return median;
 }
 
 function sortArray(arr){
@@ -16,25 +18,28 @@ function sortArray(arr){
     return arr;
 }
 
-function receiveLength(arr) {
-    var index = 0;
-    
+function buildEvens(arr){
+    var evens = [];
+
     for(var i = 0; i < arr.length; i++){
         if(arr[i]%2 === 0){
-            index++;
+            evens.push(arr[i]);
         }
     }
-    
-    return index;
+
+    return evens;
 }
 
-function findMedian(arr) {
-    var index = receiveLength(arr);
+function findMedian(arr, evens) {
+    var evensLen = evens.length;
 
-    if(index%2 === 0){
-        return arr[index];
-    }else{
-        return arr[index];
+    if(evensLen%2 === 0){
+        var firstMedian = arr[evensLen-1];
+        var secondMedian = arr[evensLen+1];
+
+        return parseInt((firstMedian+secondMedian)/2);
+    }else {
+        return arr[evensLen];
     }
 }
 
